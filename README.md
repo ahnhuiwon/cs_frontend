@@ -18,9 +18,9 @@
 
 ## ① Computer Science</a>
 
-- `프로세스와 스레드 🔥`
+- <a href="./md_folder/cs/Process.md">`프로세스와 스레드 🔥`</a>
 
-  - <a href="./md_folder/cs/Process.md">프로세스가 뭔가요?</a>
+  - 프로세스가 뭔가요?
   - 스레드가 뭔가요?
   - 프로세스와 스레드는 어떤 차이가 있나요?
 
@@ -107,7 +107,7 @@
   - 타입과 인터페이스의 차이를 아나요?
   - 프로젝트 진행 시에 어떤 상황에서 타입을 쓰고 어떤 상황에서 인터페이스를 썼나요?
 
-## ② HTML/ CSS</a>
+## <a href="./html_css.md">② HTML/ CSS</a>
 
 ### **HTML**
 
@@ -193,7 +193,7 @@
   - padding에 대하여
   - margin에 대하여
 
-## ③ JavaScript</a>
+## <a href="./js.md">③ JavaScript</a>
 
 - `프로그래밍 🔥`
 
@@ -409,7 +409,7 @@
 
   - 모듈이 뭔가요?
 
-## ④ React</a>
+## <a href="./react.md">④ React</a>
 
 - `React 시작🔥`
 - `리액트는 라이브러리인가요 프레임워크 인가요?🔥`
@@ -473,7 +473,7 @@
   - suspense가 뭔가요?
   - suspense로 가능한 것은 어떤 것들이 있나요?
 
-## ⑤ 자료구조</a>
+## <a href="./data_structure.md">⑤ 자료구조</a>
 
 - `자료구조란 무엇인가요 🔥`
 
