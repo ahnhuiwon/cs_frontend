@@ -45,7 +45,7 @@
 
 스레드끼리 프로세스의 자원을 공유하면서 프로세스 실행 흐름의 일부가 되는 것이다.
 
-<img src="./cs_images/thread1.png" alt="스레드 이미지">
+<img src="../../cs_images/thread1.png" alt="스레드 이미지">
 
 ### 프로세스와 스레드 작동 방식에 자세한 설명
 
@@ -53,7 +53,7 @@
 
 각각의 독립된 메모리 영역을 할당하기 때문에 프로세스는 또 다른 프로세스의 변수나 자료에 접근할 수 없다.
 
-<img src="./cs_images/os_process.png" alt="운영체제와 프로세스">
+<img src="../../cs_images/os_process.png" alt="운영체제와 프로세스">
 
 이와 다르게 스레드는 같은 프로세스 내의 메모리를 서로 공유할 수 있다.
 
@@ -61,7 +61,7 @@
 
 따라서 각각의 스레드는 별도의 스택을 가지고 있지만 heap 메모리는 서로 읽고 쓸 수 있게 된다.
 
-<img src="./cs_images/process_thread.png" alt="프로세스와 스레드">
+<img src="../../cs_images/process_thread.png" alt="프로세스와 스레드">
 
 ### 프로세스와 스레드의 차이
 
