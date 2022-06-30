@@ -31,7 +31,7 @@
   - 멀티 스레드 장점
   - 멀티 스레드 단점
 
-- `HTTP 🔥`
+- <a href='./md_folder/cs/http.md'>`HTTP 🔥`</a>
 
   - HTTP란 뭔가요?
   - HTTP 프로토콜의 가장 큰 특징은 뭔가요?
