@@ -32,12 +32,6 @@ http://localhost:3000를 예시로 들자면
 
 해커의 출처는 `http://hacker.com`일테니 서로 다른 출처를 확인하여 악의적인 요청을 방지할 수 있다.
 
-HTTP의 일종으로 사용자가 웹 사이트를 방문할 경우,
-
-그 사이트가 사용하고 있는 서버에서 사용자의 컴퓨터에 저장하는 KEY-VALUE값으로 구성된 작은 기록 정보 파일이다.
-
-HTTP에서 클라이언트의 상태 정보를 사용자의 PC에 저장하였다가 필요할 때 정보를 참조하거나 재사용할 수 있다.
-
 위와 같은 상황, 즉 요청의 출처가 다르다면 `Cross Origin SOP`에 위반이라고 한다.
 
 하지만 매번 요청과 리소스를 동일한 출처로 받을 수는 없는데 이 때 필요한 것이 `CORS`이다.
@@ -65,37 +59,44 @@ Simple Request는 아래와 같은 조건을 만족해야한다.
     * text/plain
   - 헤더 : Accept, Accept-Language, Content-Language, Content-Type 만 허용 한다.
 
-### `세션이란?` 🔥
+#### `사전 요청(Preflight Request)?` 🔥
 
-방문자가 웹 서버에 접속해 있는 상태를 하나의 단위로 보고
+사전 요청은 OPTIONS 메소드를 통해 다른 도메인 리소스에 요청이 가능한지 확인하는 작업이다.
 
-그 상태를 유지시키는 기술을 세션이라 한다.>
+요청이 가능한 것을 확인하면 실제 요청을 보낸다.
 
-### `세션의 특징`
+##### `Preflight Request`
 
-1. 웹 서버에 상태를 유지하기 위한 정보를 저장한다.
+  - Origin : 요청 출처
+  - Access-Control-Request-Method : 실제 요청의 메서드
+  - Access-Control-Request-Headers : 실제 요청의 추가 헤더
 
-2. 웹 서버의 저장되는 쿠키인 세션 쿠키도 있다.
+##### `Preflight Response`
 
-3. 브라우저를 닫거나, 서버에서 세션을 삭제했을 떄만 삭제되므로, 쿠키보다 비교적 보안이 좋다.
+  - Access-Control-Allow-Origin : 허가 출처
+  - Access-Control-Allow-Methods : 허가 메서드
+  - Access-Control-Allow-Headers : 허가 헤더
+  - Access-Control-Max-Age : Preflight 응답 캐시 시간
 
-4. 서버 용량이 허용하는 한에서 저장 데이터에 제한이 없다.
+여기서 **Preflight Response**의 응답 코드는 200대여야하고 Body는 비어있는 것이 좋다.
 
-5. 각 사용자마다 고유한 Session ID를 부여한다.
+#### `인증 요청 (Credentialed Request)`
 
-### `세션의 동작방식`
+인증 관련 헤더를 포함할 때 사용하는 요청이다.
 
-![session_run](https://user-images.githubusercontent.com/94499416/182762543-ab58d9e8-efaa-4fc5-852d-4a040fd067f2.png)
+클라이언트
+ > 쿠키 또는 JWT 토큰을 담아 보낼 경우 credentials : include 를 포함하여 보낸다.
 
-### `쿠키와 세션의 차이`
+서버 
+ > Access-Control-Allow-Credentials : true 해야 클라이언트의 인증 포함 요청에 허용이 가능하다.
 
-|제목|내용|설명|
-|------|---|---|
-||쿠키(cookie)|세션(session)|
-|저장위치|클라이언트 PC|웹 서버|
-|저장형식|TEXT|OBJECT|
-|만료 시점|쿠키 저장시 설정|브라우저 종료시 삭제|
-|사용하는 자원|클라이언트|웹 서버|
-|용량 제한|총 300개|서버가 허용하는 한 용량제한 없음|
-|속도|세션보다 빠름|쿠키보다 느림|
-|보안|세션보다 좋지 않음|쿠키보다 좋음|
+### `CORS 해결 방법`
+
+해결 방법에는 세 가지가 있다.
+
+  - 프론트 프록시 서버 설정
+    * 프론트 서버에서 백엔드 서버로 요청을 보낼 때, 대상의 URL을 변경한다.
+  - 직접 헤더 설정
+    * 직접 헤더에 설정을 추가한다.
+  - 스프링부트 설정
+    * 설정 클래스를 만들고 WebMvcConfigurer을 구현하면 addCorsMappings란 메서드를 사용하여 CORS의 출처 및 설정 관리를 할 수 있다.
