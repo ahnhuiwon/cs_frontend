@@ -52,7 +52,7 @@
   - CORS가 뭔가요?
   - CORS를 겪고 직접 해결해 본 경험이 있으면 말해주세요
 
-- <a href='./md_folder/cs/sass.md'>`SaaS 🔥`</a>
+- <a href='./md_folder/cs/saas.md'>`SaaS 🔥`</a>
 
   - SaaS가 뭔가요?
   - 기타 비즈니스 유형​은 뭐가 있나요?
