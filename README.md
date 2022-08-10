@@ -57,7 +57,7 @@
   - SaaS가 뭔가요?
   - 기타 비즈니스 유형​은 뭐가 있나요?
 
-- <a href='./md_folder/methodology.md'>`개발 방법론 🔥`</a>
+- <a href='./md_folder/cs/methodology.md'>`개발 방법론 🔥`</a>
 
   - 폭포수 방법론이란 뭔가요?
   - 애자일 방법론이란 뭔가요?
