@@ -66,7 +66,7 @@
 
 - 캐시란 무엇인가요?
 
-- `CI CD 🔥`
+- <a href="./md_folder/cs/cicd.md">`CI CD 🔥`</a>
 
   - CI CD란 뭔가요?
 
