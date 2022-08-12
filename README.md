@@ -70,7 +70,7 @@
 
   - CI CD란 뭔가요?
 
-- `CDN 🔥`
+- <a href="./md_folder/cs/cdn.md">`CDN 🔥`</a>
 
   - CDN이란 뭔가요?
 
