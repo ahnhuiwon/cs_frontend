@@ -37,12 +37,8 @@ CDN은 물리적으로 떨어져 있는 사람에게 컨텐츠를 더 빠르게 
 <br />
 
 ![CDN2](https://user-images.githubusercontent.com/94499416/184267344-8f9b96d1-7460-4a63-89fb-3955ec23e624.png)
-  > CDN을 사용하지 않을 경우 이미지
+  > 왼쪽이 CDN 미사용, 오른쪽이 CDN 사용 이미지
 
-<br />
-
-![CDN3](https://user-images.githubusercontent.com/94499416/184267346-d36246d7-09be-4d15-b8ba-f0b507f4af62.png)
-  > CDN을 사용할 경우 이미지
 <br />
 
 이때 CDN의 동작을 살펴보면 다음과 같은 규칙으로 수행된다.
