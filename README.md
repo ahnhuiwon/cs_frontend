@@ -195,7 +195,7 @@
 
 ## ③ JavaScript</a>
 
-- `프로그래밍 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/programming.md">`프로그래밍 🔥`</a>
 
   - 프로그래밍이란 뭐라고 생각하나요?
   - 컴파일러는 뭐고 인터프리터는 뭔가요?
