@@ -83,7 +83,7 @@
   - 통합 테스트란 무엇인가요?
   - E2E 테스트란 무엇인가요?
 
-- <a href="./md/md_folder/cs/business_logic.md">`business logic 🔥` </a>
+- <a href="./md_folder/cs/business_logic.md">`business logic 🔥` </a>
 
   - business logic 이란 무엇인가요?
 
