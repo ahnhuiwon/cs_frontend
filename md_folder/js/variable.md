@@ -487,3 +487,55 @@ var와 달리 뒤에서 선언한 변수를 앞에서 참조하니 에러가 발
 이러한 차이점 때문에 호이스팅이 발생은 하지만, 값을 참조할 수 없어서 호이스팅이 발생하지 않는 것처럼 보인다.
 
 변수의 선언과 초기화 사이에 일시적으로 변수 값을 참조할 수 없는 구간을 TDZ(Temporal Dead Zone)이라고 한다.
+
+<br />
+
+### `const 키워드는 어떤 특징은?`
+
+let과 달리 immutable(불변)의 여부가 큰 차이점이라고 생각한다.
+
+const는 중복 선언과 재할당이 불가능하다는 특징이 있다.
+
+<br />
+
+```
+const name = 'hello world';
+console.log(name);   //  'hello world'
+
+const name ="goodbye world";
+console.log(name);   //  Uncaught SyntaxError: Identifier 'name' has already been declared
+
+name = 'goodbye world';
+console.log(name);  //  Uncaught TypeError: Assignment to constant variable
+```
+
+<br />
+
+let은 변수에 다른 값을 재할당 할 수 있지만 const는 재할당 시 에러메세지를 출력한다.
+
+하지만 const는 constant(상수)를 뜻하기 떄문에 한번만 선언이 가능하며 값을 바꿀 수도 없지만 
+
+배열과 오브젝트의 값을 변경하는 것은 가능하다. 아래 코드를 확인해보자.
+
+<br />
+
+```
+const my_func = () => {
+    const list_array = ["A", "B", "B"];
+    
+    list_array = "D";
+    console.log(list_array);    // TypeError: Assignment to constant variable
+    
+    list.push("D");
+    console.log(list_array);    // ["A", "B", "C", "D"]
+}
+```
+
+<br />
+
+### `네이밍컨벤션은 어떤것들이 있는가?`
+
+- Lower Camel Case
+    - 단봉 낙타 표기법
+
+### `TDZ란?`
