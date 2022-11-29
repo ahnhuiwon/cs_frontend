@@ -219,7 +219,7 @@
   - 네이밍 컨벤션은 어떤 것들이 있나요?
   - 리터럴이 뭔가요?
 
-- `데이터 타입 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/data_type.md">`데이터 타입 🔥`</a>
 
   - 데이터 타입의 종류는 어떤 것들이 있나요? 🔥
   - 심벌 타입은 뭐죠?
