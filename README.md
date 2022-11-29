@@ -204,7 +204,7 @@
 
   - 자바스크립트의 특징은 뭐가 있나요?
 
-- `변수 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/variable.md">`변수 🔥`</a>
 
   - 변수란 무엇인가요?
   - 식별자란 무엇인가요? 🔥
