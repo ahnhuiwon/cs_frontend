@@ -256,3 +256,64 @@ var로 선언한 변수는 if 또는 for와 같은 block 레벨이 아닌 functi
 <br />
 
 ```
+
+const find_user = ( id, call_back) => {
+    setTimeout(()=>{
+        var temp_user = {
+            id : id,
+            name : "ahn - " + id,
+            email : id + "@test.com"
+        };
+        
+        call_back(temp_user);
+    }, 1000);
+}
+
+```
+
+<br />
+
+위 코드는 사용자 아이디를 받아 임시 사용자를 콜백 함수로 넘기는 비동기 함수이다.
+
+DB 연동처럼 setTimeout 함수를 이용해 1초의 지연을 주었다.
+
+<br />
+
+```
+const result_user = (user_id) => {
+    for(var i in user_id) {
+        find_user(user_id[i], (user)=>{
+            console.log("id 조회 ", user_id[i]);
+            console.log("유저 조회 ", user);
+        });
+    }
+}
+```
+
+<br />
+
+위 코드는 사용자 아이디의 배열을 받아 여러 사용자의 정보를 출력해주는 함수이다.
+
+아래와 같이 인자를 넘겨서 위 함수를 실행을 하면 의도치 않은 결과가 출력된다.
+
+![image](https://user-images.githubusercontent.com/94499416/204429367-e72c7815-1021-45d7-b636-074d4e8e21a2.png)
+
+<br />
+
+왜 사용자 아이디가 배열의 마지막 요소로 고정이 되어버린걸까? 마찬가지로 var로 선언된 변수는 function 스코프를 가진다는 점과
+
+비동기 함수의 non blocking 성질을 생각해보면 이해할 수 있다.
+
+for문에서 각 콜백 함수를 넘길 시점에는 i값이 달랐지만, 콜백 함수가 실행될 시점에는 for 루프가 끝나기 때문에
+
+i가 배열의 마지막 원소의 인덱스로 변경된 이후기 떄문이다.
+
+<br />
+
+정리한다면 var를 사용할 시에는 변수 호이스팅과 함수 스코프를 고려하면서 코딩을 해야한다.
+
+그래야 전반적으로 코드가 어떻게 작동할지 예상하기 어려운 상황이 발생하는것에 대응하기 쉬워지기 떄문이다.
+
+<br />
+
+### `var 키워드의 문제점은?`
