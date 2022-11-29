@@ -316,4 +316,174 @@ i가 배열의 마지막 원소의 인덱스로 변경된 이후기 떄문이다
 
 <br />
 
-### `var 키워드의 문제점은?`
+### `let 키워드는 var 키워드와 어떤 점은?`
+
+1. let은 중복 선언이 불가능하지만 재할당은 가능하다.
+
+```
+let name = 'hello world';
+console.log(name);  // hello world
+
+let name = 'goodbye world';
+console.log(name);  // Uncaught SyntaxError: Identifier 'name' has already been declared
+
+name = 'goodbye world';
+console.log(name);  // goodbye world
+```
+
+<br />
+
+var와 다르게 let은 해당 변수가 이미 선언되었다는 에러 메세지가 출력된다. 이처럼 중복 선언이 불가능하다.
+
+하지만 name = 'goodbye world'처럼 변수 선언 및 초기화 이후 반복해서 다른 값을 재할당 할 수 있다.
+
+<br />
+
+2. 스코프의 차이
+
+<br />
+
+위에서 var는 함수 레벨의 스코프를 가지고 있다고 설명을 했다.
+
+하지만 let과 const는 블록 레벨의 스코프를 가지고 있다.
+
+아래 코드를 비교하며 확인해보자.
+
+<br />
+
+```
+const function_scope = () => {
+    if(true){
+        var my_number = 5;
+        console.log(my_number);
+    }
+    
+    console.log(my_number);
+}
+
+function_scope();
+console.log(my_number);
+```
+
+<br />
+
+이 코드는 var를 이용해 함수 레벨 스코프를 알기 위한 코드이다. 결과는 아래와 같다.
+
+<br />
+
+```
+const function_scope = () => {
+    if(true){
+        var my_number = 5;
+        console.log(my_number); // 5
+    }
+    
+    console.log(my_number); // 5
+}
+
+function_scope();
+console.log(my_number); // ReferenceError: my_number is not defined
+```
+
+<br />
+
+var를 사용한다면 함수 내에서 선언된 변수는 함수 내에서만 유효하며 함수 외부에서는 참조할 수 없다.
+
+즉 함수 내부에서 선언한 변수는 지역 변수이고 함수 외부에서 선언한 변수는 모두 전역 변수로 취급된다.
+
+<br />
+
+아래 코드는 let을 선언한 코드이다.
+
+<br />
+
+```
+const function_scope = () => {
+    if(true){
+        let my_number = 5;
+        console.log(my_number);
+    }
+    
+    console.log(my_number);
+}
+
+function_scope();
+console.log(my_number);
+```
+
+<br />
+
+let은 어떻게 작동할까? 한번 결과를 보자.
+
+<br />
+
+```
+const function_scope = () => {
+    if(true){
+        let my_number = 5;
+        console.log(my_number); // 5
+    }
+    
+    console.log(my_number); // ReferenceError: my_number is not defined
+}
+
+function_scope();
+console.log(my_number); // ReferenceError: my_number is not defined
+```
+
+<br />
+
+함수, if, for, while, try/catch등 모든 코드 블록( {...} ) 내부에서 선언된 변수는 코드 블록 내에서만 유효하며 코드 블록 외부에서는 참조할 수 없다.
+
+즉 코드 블록 내부에서 선언한 변수는 지역변수로 취급된다.
+
+<br />
+
+### `TDZ란?`
+
+이 녀석을 이해하기 위해서는 먼저 var와 let/const의 발생하는 호이스팅의 차이점을 이해해야한다.
+
+먼저 var의 호이스팅을 알아보자.
+
+<br />
+
+```
+console.log(a); // undefined
+
+var my_number = 10;
+
+console.log(a); //  10;
+```
+
+<br />
+
+뒤에서 선언된 변수 my_number가 앞에서 참조 되었음에도 에러를 발생 시키지 않는다.
+
+이 이유는 자바스크립트 엔진이 먼저
+
+1) 변수를 선언 -> 2) undefined로 초기화
+
+했기 때문이다. 이게 바로 var로 선언된 변수의 호이스팅이다.
+
+let과 const의 호이스팅 방식을 보자.
+
+<br />
+
+```
+console.log(my_number); //  ReferenceError: Cannot access 'a' before initialization
+let my_number = 10;
+```
+
+<br />
+
+var와 달리 뒤에서 선언한 변수를 앞에서 참조하니 에러가 발생한다.
+
+마치 호이스팅이 발생하지 않는 것처럼 보이는데 사실 호이스팅은 발생한다.
+
+이런 현상이 발생하는 이유는 let/const의 호이스팅 과정이 var와 다르게 진행되기 때문인데
+
+1) 코드 실행 전 변수 선언 -> 2) 초기화는 코드 실행 과정에서 변수 선언문을 만났을 때 수행한다.
+
+이러한 차이점 때문에 호이스팅이 발생은 하지만, 값을 참조할 수 없어서 호이스팅이 발생하지 않는 것처럼 보인다.
+
+변수의 선언과 초기화 사이에 일시적으로 변수 값을 참조할 수 없는 구간을 TDZ(Temporal Dead Zone)이라고 한다.
