@@ -166,8 +166,8 @@ example_function 함수는 인자로 함수를 전달받고 setTimeout()를 통�
 <br />
 
 ```
-const outer_func = () => {
-  const out_put = 'Hello' + name + '!';
+const outer_func = (name) => {
+  const out_put = 'Hello ' + name + ' !';
   
   return ()=>{
     alert(out_put);
