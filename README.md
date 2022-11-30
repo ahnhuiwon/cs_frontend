@@ -241,7 +241,7 @@
   - 고차 함수에 대해서 아나요?
   - forEach 메서드와 map메서드의 차이점에 대해 알고 있나요?
 
-- `객체 리터럴 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/object.md">`객체 리터럴 🔥`</a>
 
   - 자바스크립트에서 객체란 뭘까요?
   - 함수와 메서드의 차이점에 대해 알고 계신가요?
