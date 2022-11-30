@@ -234,7 +234,7 @@
   - 암묵적 타입 변환이 뭔가요?
   - truthy / falsy 한 값이 뭔가요?
 
-- `배열 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/array.md">`배열 🔥`</a>
 
   - 자바스크립트의 배열은 자료구조의 배열과 같나요?
   - 배열의 메서드는 어떤 종류가 있나요?
