@@ -112,22 +112,6 @@ my_object.type = "electron"
 
 <br />
 
-#### `생성자 함수`
-
-new 키워드를 이용해 Object 생성자 함수를 호출하면 비어있는 객체를 얻을 수 있다.
-
-다만 new Object()를 호출하면 비어있는 객체를 생성하기 때문에 객체 생성 직후에는 프로퍼티를 추가해줘야한다.
-
-```
-let my_object = new Object();
-
-my_object.name = "heets";
-my_object.price = "4500";
-my_object.type = "electron"
-```
-
-<br />
-
 #### `Object 생성자 함수`
 
 new 키워드를 이용해 Object 생성자 함수를 호출하면 비어있는 객체를 얻을 수 있다.
@@ -144,28 +128,18 @@ my_object.type = "electron"
 
 <br />
 
-#### `생성자 함수`
+#### `Object.create() 메서드`
 
-생성자 함수를 사용하면 자바, C++의 클래스처럼 껍데기를 만들 수 있다.
+지정된 프로토타입 객체와 프로퍼티를 가지고 새로운 객체를 만든다.
 
-기존 함수에 new 연산자를 붙여서 호출하면, 해당 함수는 생성자 함수로 동작한다.
-
-여담으로 함수가 일반적인 함수인지 객체를 만들기 위한 목적의 생성자 함수인지를 구분하기 위해 
-
-생성자 함수의 첫 문자는 대문자로 표기하는 것이 관례이다.
+사용자가 프로토타입 객체를 직접 명시할 수 있으며 첫번째 인수로 사용할 객체, 두번쨰 인수로 새로운 객체의 추가할 프로퍼티 정보를 전달한다.
 
 ```
-function Animal(name, leg, food) {
-  this.name = name;
-  this.leg = leg;
-  this.food = food;
-}
+const my_object = Object.create(Object.prototype, {
+    smoke : { value : "heets", writable: true, enumerable : true, configurable: true}
+})
 
-let first_animal = new Animal("monkey", 2, "banana");
-let second_animal = new Animal("lion", 4, "meat");
-
-console.log(first_animal);
-console.log(second_animal);
+console.log(my_object);
 ```
 
 <br />
