@@ -227,7 +227,7 @@
   - 정적 타이핑이 뭔가요?
   - 동적 타이핑이 뭔가요?
 
-- `타입변환과 단축 평가 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/type_change.md">`타입변환과 단축 평가 🔥`</a>
 
   - 명시적 타입 변환이 뭔가요?
   - 명시적 타입 변환 함수를 예를 들어볼 수 있나요?
