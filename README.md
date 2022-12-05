@@ -87,7 +87,7 @@
 
   - business logic 이란 무엇인가요?
 
-- `Snippet 🔥`
+- <a href="./md_folder/cs/snippet.md">`Snippet 🔥`</a>
 
   - snippet 이란 무엇인가요?
 
