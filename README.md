@@ -247,7 +247,7 @@
   - 함수와 메서드의 차이점에 대해 알고 계신가요?
   - 자바스크립트에서 객체를 생성하는 방법은 어떤 것들이 있나요?
 
-- `원시 값과 객체 비교 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/new/develop/md_folder/js/value_diff.md">`원시 값과 객체 비교 🔥`</a>
 
   - 동적 타이핑을 지원하는 자바스크립트에서 데이터의 타입을 크게 2개로 나누는 이유가 있을까요?
   - 값에 의한 전달이 뭔가요?
