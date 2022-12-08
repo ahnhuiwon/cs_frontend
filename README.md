@@ -253,7 +253,7 @@
   - 값에 의한 전달이 뭔가요?
   - 참조에 의한 전달이 뭔가요?
 
-- `함수 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/function.md">`함수 🔥`</a>
 
   - 자바스크립트에서 함수를 정의하는 방법은 몇가지가 있나요?
   - 함수 선언문과 함수 표현식은 어떤 차이가 있나요?
