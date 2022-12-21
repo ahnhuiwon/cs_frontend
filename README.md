@@ -259,7 +259,7 @@
   - 함수 선언문과 함수 표현식은 어떤 차이가 있나요?
   - 즉시 실행 함수(IIFE)에 대해 알고 있나요? 알고 있다면 아는 내용에 대해 말해보세요
 
-- `스코프 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/scope.md">`스코프 🔥`</a>
 
   - 스코프가 뭔가요? 🔥🔥🔥
   - 스코프에는 어떤 종류가 있죠? 🔥🔥
