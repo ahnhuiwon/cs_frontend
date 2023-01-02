@@ -136,14 +136,20 @@ new 연산자와 함께 생성자 함수를 호출하면 자바스크립트 엔�
 
 ```
 function My_squre( width, height ) {
+  // 1. 암묵적으로 인스턴스가 생성되고 this에 바인딩
+  
+  // 2. this에 바인딩되어 있는 인스턴스를 초기화한다.
   this.width = width;
   this.height = height;
   
   this.get_area = function () {
     return width * height;
   }
+  
+  // 3. 완성된 인스턴스가 바인딩된 this가 암묵적으로 반환한다.
 }
 
+// 인스턴스 생성, My_squre 생성자 함수는 암묵적으로 this를 반환한다.
 const temp_squre = new My_squre(10, 10);
 console.log(temp_squre);  //  My_squre { radius : 1, get_area : ƒ }
 ```
