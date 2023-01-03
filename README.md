@@ -272,7 +272,7 @@
   - 객체 리터럴로 만들 때와는 무슨 차이가 있죠? 왜 생성자 함수를 사용하나요?
   - 생성자 함수가 객체(인스턴스)를 생성하는 과정에 대해 간략하게 설명해줄 수 있나요?
 
-- `함수와 일급 객체 🔥`
+- <a href="https://github.com/ahnhuiwon/konw_cs_frontend/blob/develop/md_folder/js/first_class_object.md">`함수와 일급 객체 🔥`</a>
 
   - 일급 객체가 뭔가요?
   - 자바스크립트에서 함수가 일급 객체라면, 일급 객체로 뭘 할 수 있나요?
