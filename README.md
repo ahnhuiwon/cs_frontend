@@ -31,7 +31,7 @@
   - 멀티 스레드 장점
   - 멀티 스레드 단점
   
-- <a href="./md_folder/cs/Process.md">`스택과 큐 🔥`</a>
+- <a href="./md_folder/cs/stack_queue.md">`스택과 큐 🔥`</a>
 
   - 스택이란?
   - 큐란?
