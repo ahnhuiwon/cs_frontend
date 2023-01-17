@@ -291,7 +291,7 @@
   - 자바스크립트는 객체지향 프로그래밍 언어인가요?
   - 프로토타입이 뭔가요?
 
-- `strict mode 🔥`
+- <a href="./md_folder/js/strict_mode.md">`strict mode 🔥`</a>
 
   - strict mode가 뭔가요?
   - strict mode를 통해 무엇을 예방할 수 있죠?
