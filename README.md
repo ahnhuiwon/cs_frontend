@@ -296,7 +296,7 @@
   - strict mode가 뭔가요?
   - strict mode를 통해 무엇을 예방할 수 있죠?
 
-- `빌트인 객체 🔥`
+- <a href="./md_folder/js/built_in_object.md">`빌트인 객체 🔥`</a>
 
   - 빌트인 객체가 뭔가요? 종류는 어떤게 있죠?
   - 래퍼 객체에 대해서 알고 있나요?
