@@ -40,3 +40,69 @@
 다만 속도와 보안이 좋지 않아 현재는 거의 쓰지 않는다. 따라서 실행 컨텍스트가 생성되는 시점은 곧 함수를 실행하는 시점이다.
 
 <br />
+
+### 실행 컨텍스트의 구조
+
+![ec](https://user-images.githubusercontent.com/94499416/215015524-2793ff49-df85-40cd-8f55-b31c1326f3d4.png)
+
+<br />
+
+크게 Lexical Environment 컴포넌트와 Variable Environment 컴포넌트, this binding 객체로 이루어져 있다.
+
+그리고 Lexical Environment, Variable Environment는 다시 Environment Record와 Outer Environment Reference로 구성된다.
+
+<br />
+
+### 실행 컨텍스트의 실행 흐름
+
+자바스크립트 엔진은 script tag를 처음 만나면 가장 먼저 전역 실행 컨텍스트를 만들어 이를 현재 실행중인 실행스텍에 push한다.
+
+그리고 함수가 호출될 때마다 새로운 실행 컨텍스트를 만들어서 실행 스택의 맨 꼭대기에 push한다.
+
+실행 스택의 맨 위에 있는 실행 컨텍스트가 현재 실행되고 있는 컨텍스트이다.
+
+현재 실행되는 컨텍스트에서 이 컨텍스트와 관련없는 실행 코드가 실행되면 새로운 컨텍스트가 생성되어 스택에 들어가고 제어권이 그 컨텍스트로 이동한다.
+
+아래 코드를 보자.
+
+<br />
+
+```
+let my_var = "my variable!";
+
+function first_func() {
+  console.log('첫번째 함수 안에 존재');
+  second_func();
+  console.log('다시 첫번째 함수 안에 존재')
+}
+
+function second_func() {
+  console.log('두번째 함수 안에 존재')
+}
+
+first_func();
+
+console.log('전역 실행 컨텍스트 내부');
+```
+
+<br />
+
+실행 결과는 아래와 같다.
+
+![image](https://user-images.githubusercontent.com/94499416/215016986-220575d2-e6e6-4b8e-b226-a1a52331f89c.png)
+
+<br />
+
+위 코드가 실행될 때 실행 스택의 모습을 그림으로 나타내면 아래와 같다.
+
+![ec_stack](https://user-images.githubusercontent.com/94499416/215017036-0b5a770e-07e0-4c8c-b9a1-f6177248965a.png)
+
+<br />
+
+전역 실행 컨텍스트가 먼저 스택에 추가되고 이후에 함수가 호출될 때마다 새로운 실행 컨텍스트가 만들어지고
+
+스택에 추가되며, 실행이 완료되면 스택에 제거된다.
+
+전역 실행 컨텍스트는 어플리케이션이 종료될 때(웹 페이지를 벗어나거나 브라우저 종료시)까지 유지된다. 
+
+
